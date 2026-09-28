@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dihh226skmbea"]
+
+[node name="BUNECU" type="CharacterBody2D" unique_id=1213666770]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2029958958]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=808785828]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=264821681]
