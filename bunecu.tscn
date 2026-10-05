@@ -1,9 +1,60 @@
 [gd_scene format=3 uid="uid://dihh226skmbea"]
 
-[node name="BUNECU" type="CharacterBody2D" unique_id=1213666770]
+[ext_resource type="Script" uid="uid://b47mnfjq548ue" path="res://bunecu.gd" id="1_idckn"]
+[ext_resource type="Texture2D" uid="uid://cvhms78oospb1" path="res://arte/tilemap_packed.png" id="2_6plyn"]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2029958958]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujqjp"]
+atlas = ExtResource("2_6plyn")
+region = Rect2(272, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_itrc3"]
+atlas = ExtResource("2_6plyn")
+region = Rect2(256, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbavn"]
+atlas = ExtResource("2_6plyn")
+region = Rect2(256, 112, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wdj7r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujqjp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_itrc3")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbavn")
+}],
+"loop": 1,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8xv2y"]
+size = Vector2(13, 14)
+
+[node name="BUNECU" type="CharacterBody2D" unique_id=1213666770]
+script = ExtResource("1_idckn")
+
+[node name="Animação" type="AnimatedSprite2D" parent="." unique_id=2029958958]
+sprite_frames = SubResource("SpriteFrames_wdj7r")
+animation = &"new_animation"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=808785828]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_8xv2y")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=264821681]
+zoom = Vector2(2, 2)
+limit_left = 0
+limit_top = 0
+limit_right = 600
+limit_bottom = 300
+position_smoothing_enabled = true

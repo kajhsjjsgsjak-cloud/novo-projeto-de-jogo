@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dcwnc86yqpc0t"]
+
+[ext_resource type="Script" uid="uid://6a0pmfo1gfjf" path="res://alvinho.gd" id="1_bkest"]
+[ext_resource type="Texture2D" uid="uid://cvhms78oospb1" path="res://arte/tilemap_packed.png" id="2_dgsfd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjvch"]
+atlas = ExtResource("2_dgsfd")
+region = Rect2(256, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0rif8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjvch")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1m256"]
+size = Vector2(14, 16)
+
+[node name="alvinho" type="Node2D" unique_id=1968490378]
+script = ExtResource("1_bkest")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1619731337]
+sprite_frames = SubResource("SpriteFrames_0rif8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1281460442]
+shape = SubResource("RectangleShape2D_1m256")
+
+[node name="Label" type="Label" parent="." unique_id=1516783501]
+offset_right = 40.0
+offset_bottom = 23.0
